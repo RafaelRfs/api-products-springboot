@@ -133,11 +133,26 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+		<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+            <!-- Force alphabetical order to have a reproducible build -->
+			 <excludes>
+            <exclude>**/test/**</exclude>
+            <exclude>**/resources/**</exclude>
+          </excludes>
+			<argLine>-Xmx512m</argLine>
+            <runOrder>alphabetical</runOrder>
+            <useSystemClassLoader>false</useSystemClassLoader>
+        </configuration>
+    </plugin>
+        </plugins>
+    </build>
 </project>
