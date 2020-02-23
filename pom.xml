@@ -141,7 +141,7 @@
 		<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.19.1</version>
+        <version>3.0.0-M4</version>
         <configuration>
             <testFailureIgnore>true</testFailureIgnore>
 			 <excludes>
@@ -151,6 +151,13 @@
 			<argLine>-Xmx512m</argLine>
             <runOrder>alphabetical</runOrder>
             <useSystemClassLoader>false</useSystemClassLoader>
+			<archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>br.com.apiProducts.App</mainClass>
+          </manifest>
+        </archive>
         </configuration>
     </plugin>
         </plugins>
