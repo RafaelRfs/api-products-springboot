@@ -148,7 +148,7 @@
             <exclude>**/test/**</exclude>
             <exclude>**/resources/**</exclude>
           </excludes>
-			<argLine>-Xms256m -Xmx512m</argLine>
+			<argLine>-Xmx512m</argLine>
             <runOrder>alphabetical</runOrder>
             <useSystemClassLoader>false</useSystemClassLoader>
         </configuration>
