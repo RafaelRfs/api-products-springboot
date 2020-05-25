@@ -9,7 +9,7 @@ import org.springframework.data.domain.Sort;
 public class Assets {
 	public static final String ROLE_USER = "USER";
 	public static final String API_LOGIN = "https://serene-sea-70010.herokuapp.com/";
-	public static final String API_VERIFY = API_LOGIN+"login/verify";
+	public static final String API_VERIFY = API_LOGIN+"v1/login/auth";
 	public static final String API_TOKEN_DATA = API_LOGIN+"token/data";
 	public static final String EMAIL = "email";
 	public static final String SENHA = "senha";
@@ -27,8 +27,9 @@ public class Assets {
 	public static final String CATEGORY_ID = "categoryId";
 	public static final String SUBCATEGORY_ID = "subcategoryId";
 	public static final String ERROR_MSG = "ERROR >> ";
+	public static final String ENV_DATABASE_URL = "DATABASE_URL";
+	public static final String ENV_DATABASE_URL_LOCAL = "mysql://root@127.0.0.1:3306/teste";
 	
-
 	public static Sort getSort(Map<String, Object> configs) {
 		String orderby = (String) configs.get(Assets.ORDER_BY);
 		String[] dataOrder = orderby.trim().split(" ");
